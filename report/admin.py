@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Category, City, Location, Incident
 
-# Register your models here.
+
+admin.site.register([
+        Category,
+        City,
+        Location,
+        Incident
+    ])
