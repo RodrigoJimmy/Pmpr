@@ -1,0 +1,38 @@
+{% extends "report/base.html" %}
+
+{% block content %}
+
+    <h1><a href="#">Report</a></h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>DATE/TIME</th>
+          <th>CATEGORY</th>
+          <th>ORG</th>
+          <th>CITY</th>
+          <th>LOCAL</th>
+          <th>STREET</th>
+          <th>NUM</th>
+          <th>CALLER</th>
+          <th>RESULT</th>
+          <th>DOC</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for incident in incidents %}
+    <tr>
+        <td>{{ incident.date_time }}</td>
+        <td>{{ incident.category.name }}</td>
+        <td>{{ incident.organization }}</td>
+        <td>{{ incident.city.name }}</td>
+        <td>{{ incident.location.name }}</td>
+        <td>{{ incident.street }}</td>
+        <td>{{ incident.num }}</td>
+        <td>{{ incident.caller }}</td>
+        <td>{{ incident.result }}</td>
+        <td>{{ incident.doc }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
